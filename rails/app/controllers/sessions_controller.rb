@@ -1,14 +1,21 @@
-class SessionsController < ApplicationController
-  respond_to :html, :json
+require 'pp'
 
+class SessionsController < Devise::SessionsController
   def create
-    super do |user|
-      if request.format.json?
+    respond_to do |format|
+      format.html { super }
+      format.json do
+        puts "why"
+        self.resource = warden.authenticate!(scope: resource_name)
+
+        puts "why"
+        pp warden.authenticate!(scope: resource_name)
+        sign_in(resource_name, resource)
         data = {
-          token: user.authentication_token,
-          email: user.email
+          user_token: self.resource.authentication_token,
+          user_email: self.resource.email
         }
-        render json: data, status: 201 and return
+        render json: data, status: 201
       end
     end
   end

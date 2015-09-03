@@ -62,8 +62,12 @@ module.exports = function(environment) {
   }
   ENV['simple-auth'] = {
     crossOriginWhitelist: ['http://localhost:3000'],
-    authorizer: 'simple-auth-authorizer:devise',
-    routeAfterAuthentication: 'stories'
+    authorizer: 'simple-auth-authorizer:devise'
+    // routeAfterAuthentication: ''
+  };
+  ENV['simple-auth-devise'] = {
+    tokenAttributeName: 'token',
+    identificationAttributeName: 'email'
   };
 
   return ENV;
