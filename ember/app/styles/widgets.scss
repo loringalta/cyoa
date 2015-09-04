@@ -1,0 +1,34 @@
+.gridly {
+  position: relative;
+  margin: auto;
+  width: 90%;
+}
+
+.brick.small {
+  width: 140px;
+  height: 140px;
+  background: #fff;
+}
+
+@for $i from 1 through 40 {
+  .brick {
+    &.large-#{$i} {
+      width: 280px;
+      background: #fff;
+      min-height: 300px;
+      height: auto;
+      a.delete-widget {
+        display: block;
+        color: #000;
+        background: rgba(255, 255, 255, 0.2);
+        width: 40px;
+        height: 40px;
+        top: 0;
+        right: 0;
+        position: absolute;
+        text-align: center;
+        line-height: 40px;
+      }
+    }
+  }
+}

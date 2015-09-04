@@ -1,3 +1,4 @@
 class FoodItemSerializer < ActiveModel::Serializer
-  attributes :foodid, :name, :nutrients, :group
+  attributes :id, :name, :foodid, :group
+  has_many :nutrients
 end

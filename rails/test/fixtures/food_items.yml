@@ -2,12 +2,10 @@
 
 one:
   name: MyString
-  group: MyString
-  nutrients: MyText
   foodid: 1
+  group: MyString
 
 two:
   name: MyString
-  group: MyString
-  nutrients: MyText
   foodid: 1
+  group: MyString

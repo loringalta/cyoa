@@ -7,18 +7,15 @@ var Router = Ember.Router.extend({
 
 
 Router.map(function() {
-  this.resource('sessions', function() {
-    // this.route('logout');
-    // this.route('login');
-  });
   this.resource('users', function() {
     this.route('signup');
     this.route('user', {
       path: '/user/:user_id'
     });
   });
-  this.route('protected');
   this.route('login');
+  this.route('search-bar');
+  this.route('food-item');
 });
 
 export default Router;

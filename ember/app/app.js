@@ -13,6 +13,16 @@ App = Ember.Application.extend({
   Resolver: Resolver
 });
 
+Ember.onerror = function(error) {
+  Ember.$.ajax('/error-notification', {
+    type: 'POST',
+    data: {
+      stack: error.stack,
+      otherInformation: 'exception message'
+    }
+  });
+}
+
 loadInitializers(App, config.modulePrefix);
 loadInitializers(App, 'rails-csrf');
 

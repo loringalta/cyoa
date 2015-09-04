@@ -5,10 +5,7 @@ class SessionsController < Devise::SessionsController
     respond_to do |format|
       format.html { super }
       format.json do
-        puts "why"
         self.resource = warden.authenticate!(scope: resource_name)
-
-        puts "why"
         pp warden.authenticate!(scope: resource_name)
         sign_in(resource_name, resource)
         data = {
@@ -19,4 +16,5 @@ class SessionsController < Devise::SessionsController
       end
     end
   end
+
 end

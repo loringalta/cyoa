@@ -1,0 +1,27 @@
+html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+  margin: 0;
+  background-color: $peach;
+  font-family: 'Raleway';
+  src:url('raleway/raleway_thin-webfont.eot');
+  font-weight: normal;
+  font-style: normal;
+  background-image: url('/assets/images/cat.jpeg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+@media only screen and (max-width: 767px) {
+  body {
+    //background-image: url(images/background-photo-mobile-devices.jpg);
+  }
+}

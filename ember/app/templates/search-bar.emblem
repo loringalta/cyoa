@@ -1,0 +1,6 @@
+form submit="search"
+  label for='numberOfResults'
+  = input value= numberOfResults id="numResults" onfocus="this.placeholder=''"
+  label for='searchQuery'
+  = input value= searchQuery id="query" onfocus="this.placeholder=''"
+  button type="submit" name="submit-search" value="submit" class="buttonFlat" Submit

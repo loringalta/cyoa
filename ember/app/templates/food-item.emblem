@@ -1,0 +1,5 @@
+.container
+  h1 Food Item
+  ul
+    each model as |food|
+      li = food.name

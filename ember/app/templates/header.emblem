@@ -1,7 +1,12 @@
-if session.isAuthenticated
-  a{ action 'invalidateSession' } Logout
-else
-  link-to "login" | Login
-
-link-to "index" | Home
-link-to "protected" | Protected
+nav
+  ul
+    li
+      if session.isAuthenticated
+        a{ action 'invalidateSession' } Logout
+      else
+        a href='login' | Login
+    li
+      a href='' | Home
+    li
+      if session.isAuthenticated
+        a href='/search-bar' | Search

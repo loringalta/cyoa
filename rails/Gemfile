@@ -7,9 +7,9 @@ gem 'rails-api'
 
 gem 'spring', :group => :development
 gem 'faker'
-gem 'active_model_serializers', '~> 0.8.1'
+gem 'active_model_serializers', '~> 0.8.2'
 
-gem 'sqlite3'
+gem 'pg'
 
 gem 'devise'
 

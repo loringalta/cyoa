@@ -1,11 +1,27 @@
-20.times do
-  FoodItem.create(
-    foodid: Faker::Number.number(4),
-    name: Faker::Lorem.words.join(' '),
-    nutrients: Faker::Lorem.words.join(' '),
-    group: Faker::Lorem.words.join(' ')
-    )
-end
+
+
+n2 = FoodNutrient.create(nutrient_name: 'calcium', unit: 'g', value: 3)
+n3 = FoodNutrient.create(nutrient_name: 'magnesium', unit: 'g', value: 4)
+n1 = FoodNutrient.new({
+  nutrient_name: 'calorie',
+  unit: 'g',
+  value: 2
+  })
+
+FoodItem.create(
+  name: 'apple',
+  group: 'fruit',
+  foodid: 1234,
+  nutrients: [n1, n2, n3]
+)
+
+FoodItem.create(
+  name: 'banana',
+  group: 'fruit',
+  foodid: 1234,
+  nutrients: [n1]
+)
+
 
 User.create([
   { email: 'green@mail.com',

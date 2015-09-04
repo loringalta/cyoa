@@ -1,0 +1,96 @@
+@mixin placeholder {
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder           {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}
+}
+
+.main-form:after {
+  display: table;
+  clear: both;
+}
+
+.main-form {
+  display: block;
+  max-width: 300px;
+  margin: 5em auto;
+  padding: 10px;
+  border-radius: 1rem;
+  background: lighten(#f4f4f4, 90%);
+  box-shadow: 5px 5px 0 rgba(0,0,0,.1);
+  &.title{
+    padding: 5px 0;
+    box-shadow: none;
+    text-align: center;
+    margin: 10px auto;
+    h1 {
+      position: relative;
+      font-size: .8em;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+
+      &:after{
+        position: absolute;
+        bottom: -13px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 40px;
+        height: 4px;
+        background: lighten(#000, 95%);
+        content: "";
+      }
+    }
+  }
+  &.body{
+    margin: 10px auto;
+    box-shadow: none;
+    &.input{
+      display: block;
+      width: block;
+      width: 90%;
+      border: 0;
+      background: darken(#fff, 1%);
+      border-radius: 0;
+      padding: 10px;
+      margin-bottom: 10px;
+      outline: 0;
+      font-size: .7rem;
+      color: lighten(#000, 40%);
+      //@include transition(all, 0.2s, ease-in-out);
+      &:focus {
+        background: darken(#fff, 3%);
+      }
+    }
+  }
+  .btn {
+    display: block;
+    width: 100%;
+    background: lighten(#000, 90%);
+    padding: 15px;
+    border: 0;
+    font-size: .6rem;
+    color: darken(#fff, 40%);
+    cursor: pointer;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 1em;
+    //@include transition(all, 0.2s, ease-in-out);
+    border-radius: 0 0 1rem 1rem;
+
+    &:last-of-type {
+      background: #FCA44B;
+      color: #fff;
+
+      &:hover {
+        background: darken(#FCA44B, 10%);
+      }
+    }
+  }
+}
+
+@include placeholder {
+  color: lighten(#000, 80%);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+ }

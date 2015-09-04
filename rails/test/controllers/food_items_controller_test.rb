@@ -13,7 +13,7 @@ class FoodItemsControllerTest < ActionController::TestCase
 
   test "should create food_item" do
     assert_difference('FoodItem.count') do
-      post :create, food_item: { foodid: @food_item.foodid, group: @food_item.group, name: @food_item.name, nutrients: @food_item.nutrients }
+      post :create, food_item: { foodid: @food_item.foodid, group: @food_item.group, name: @food_item.name }
     end
 
     assert_response 201
@@ -25,7 +25,7 @@ class FoodItemsControllerTest < ActionController::TestCase
   end
 
   test "should update food_item" do
-    put :update, id: @food_item, food_item: { foodid: @food_item.foodid, group: @food_item.group, name: @food_item.name, nutrients: @food_item.nutrients }
+    put :update, id: @food_item, food_item: { foodid: @food_item.foodid, group: @food_item.group, name: @food_item.name }
     assert_response 204
   end
 
