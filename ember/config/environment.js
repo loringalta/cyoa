@@ -37,6 +37,9 @@ module.exports = function(environment) {
   };
 
 
+  ENV.coffeeOptions = {
+    lint: true
+  }
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
@@ -49,24 +52,21 @@ module.exports = function(environment) {
   if (environment === 'test') {
     ENV.baseURL = '/';
     ENV.locationType = 'none';
-
-    // keep test console output quieter
-    // ENV.APP.LOG_ACTIVE_GENERATION = false;
     ENV.APP.LOG_VIEW_LOOKUPS      = false;
-
     ENV.APP.rootElement = '#ember-testing';
+    ENV['simple-auth'].store = 'simple-auth-session-store:ephemeral';
+
   }
 
   if (environment === 'production') {
 
   }
+
   ENV['simple-auth'] = {
     crossOriginWhitelist: ['http://localhost:3000'],
     authorizer: 'simple-auth-authorizer:devise',
-    store: 'simple-auth-session-store:local-storage'
-
-    // routeIfAlreadyAuthenticated: '/food-item',
-    // routeAfterAuthentication: '/food-item'
+    store: 'simple-auth-session-store:local-storage',
+    routeAfterAuthentication: '/search-bar'
   };
   ENV['simple-auth-devise'] = {
     tokenAttributeName: 'token',

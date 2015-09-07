@@ -11,9 +11,5 @@ module.exports = function(defaults) {
   app.import('bower_components/gridly/javascripts/jquery.gridly.js');
   app.import('bower_components/gridly/stylesheets/jquery.gridly.css');
 
-  // app.import('vendor/jquery-ui.js');
-  // app.import('vendor/jquery.dataTables.js');
-  // app.import('vendor/jquery.gridly.js');
-  // app.import('vendor/jquery.js');
   return app.toTree();
 };

@@ -1,12 +1,12 @@
 nav
   ul
-    li
+    li#login
       if session.isAuthenticated
         a{ action 'invalidateSession' } Logout
       else
-        a href='login' | Login
-    li
+        a href='/login' | Login
+    li#home
       a href='' | Home
-    li
-      if session.isAuthenticated
-        a href='/search-bar' | Search
+    li#search
+      / if session.isAuthenticated
+      a href='/search-bar' | Search

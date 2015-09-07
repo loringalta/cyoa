@@ -1,6 +1,22 @@
-form submit="search"
-  label for='numberOfResults'
-  = input value= numberOfResults id="numResults" onfocus="this.placeholder=''"
-  label for='searchQuery'
-  = input value= searchQuery id="query" onfocus="this.placeholder=''"
-  button type="submit" name="submit-search" value="submit" class="buttonFlat" Submit
+.container
+  form submit="search" class="search-wrapper cf"
+    = input value= numberOfResults id="numResults" placeholder="Num Results" onfocus="this.placeholder=''" type="search"
+    = input value= searchQuery id="query" placeholder="Search" onfocus="this.placeholder=''" type="search"
+    button{action "search"} type="submit" value="submit"
+      Submit
+  .search-board
+    .gridly
+      each model as |food index|
+        .brick class="large-{{index}}"
+          table class="pure-table"
+            thead
+              tr
+                th = food.name
+                th in 100 grams
+            each nutrient in food.nutrients
+              tr
+                td = nutrient.nutrient_title
+                td {{nutrient.value}} {{nutrient.unit}}
+              tr
+                td group
+                td = food.group

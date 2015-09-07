@@ -1,9 +1,11 @@
 @import 'variables';
 @import "bower_components/font-awesome/scss/font-awesome";
+@import "searchbar";
 @import 'header';
 @import 'home';
 @import 'dashboard';
 @import 'jquery.gridly';
+@import 'tables';
 @import 'widgets';
 @import 'sessions';
 @import 'landing';

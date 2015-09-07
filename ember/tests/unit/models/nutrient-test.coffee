@@ -1,6 +1,6 @@
 `import { moduleForModel, test } from 'ember-qunit'`
 
-moduleForModel 'food-nutrients', 'Unit | Model | food nutrients', {
+moduleForModel 'nutrient', 'Unit | Model | nutrient', {
   # Specify the other units that are required for this test.
   needs: []
 }
