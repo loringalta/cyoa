@@ -1,3 +1,4 @@
 class FoodNutrientSerializer < ActiveModel::Serializer
-  attributes :unit, :value, :nutrient_name
+  embed :ids, include: true
+  attributes :id, :unit, :value, :nutrient_name, :nutrient_title
 end

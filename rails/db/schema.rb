@@ -17,19 +17,22 @@ ActiveRecord::Schema.define(version: 20150903191326) do
   enable_extension "plpgsql"
 
   create_table "food_items", force: :cascade do |t|
+    t.string   "search_query"
     t.string   "name"
     t.integer  "foodid"
     t.string   "group"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "num_result"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "food_nutrients", force: :cascade do |t|
     t.integer  "value"
     t.string   "nutrient_name"
+    t.string   "nutrient_title"
     t.string   "unit"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.integer  "food_item_id"
   end
 

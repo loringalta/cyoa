@@ -1,4 +1,5 @@
 class Api::FoodNutrientsController < ApplicationController
+  respond_to :json
   before_action :set_food_nutrient, only: [:show, :update, :destroy]
 
   # GET /food_nutrients
