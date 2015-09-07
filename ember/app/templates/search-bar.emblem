@@ -6,7 +6,7 @@
       Submit
   .search-board
     .gridly
-      each model as |food index|
+      each model as |foodItem index|
         .brick class="large-{{index}}"
           table class="pure-table"
             thead
@@ -17,6 +17,6 @@
               tr
                 td = nutrient.nutrient_title
                 td {{nutrient.value}} {{nutrient.unit}}
-              tr
-                td group
-                td = food.group
+            tr
+              td group
+              td = food.group

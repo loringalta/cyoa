@@ -3,9 +3,9 @@ import Ember from 'ember';
 
 export default DS.ActiveModelAdapter.extend({
   namespace: 'api',
-  headers:  Ember.computed(function() {
+  headers: function() {
     return {
       "X-XSRF-TOKEN": Ember.get(document.cookie.match(/XSRF\-TOKEN\=([^;]*)/), "1")
     };
-  }).property().volatile()
+  }.property().volatile()
 });

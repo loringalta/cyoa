@@ -4,9 +4,9 @@ nav
       if session.isAuthenticated
         a{ action 'invalidateSession' } Logout
       else
-        a href='/login' | Login
+        link-to "login" | Login
     li#home
-      a href='' | Home
+      link-to "index" | Home
     li#search
       / if session.isAuthenticated
-      a href='/search-bar' | Search
+      link-to "search-bar" | Search

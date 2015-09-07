@@ -12,14 +12,14 @@ module 'Integration - Login', {
 
 test 'Login Link is viewable', (assert) ->
   visit("/").then ->
-    equal(find('nav ul li#login a').text(), "| Login")
+    equal(find('nav ul li#login a').text(), "Login")
     click("nav ul li#login a")
     andThen ->
       equal(find('h1').text(), "Login")
 
 test 'Home Link is viewable', (assert) ->
   visit("/").then ->
-    equal(find('nav ul li#home a').text(), "| Home")
+    equal(find('nav ul li#home a').text(), "Home")
     click("nav ul li#home a")
     andThen ->
       equal(find('h1').text(), 'landing page')

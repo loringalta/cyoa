@@ -7,17 +7,21 @@ var Router = Ember.Router.extend({
 
 
 Router.map(function() {
-  this.route('session');
+  this.resource('session', function() {
+
+  });
   this.resource('users', function() {
     this.route('signup');
     this.route('user', {
       path: '/user/:user_id'
     });
   });
+  
   this.route('login');
   this.resource('search-bar', function() {
     this.route('food-item');
   });
+
 });
 
 

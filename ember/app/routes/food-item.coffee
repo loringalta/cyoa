@@ -1,10 +1,9 @@
 `import Ember from 'ember'`
-`import AuthenticatedRouteMixin from 'simple-auth/mixins/authenticated-route-mixin'`
 
-FoodItemRoute = Ember.Route.extend AuthenticatedRouteMixin,
+FoodItemRoute = Ember.Route.extend
   controllerName: 'search-bar'
   model: (params) ->
-    data = this.store.findAll('foodItem')
+    data = this.store.findQuery('foodItem', params)
     return data
 
 `export default FoodItemRoute`

@@ -7,5 +7,4 @@ moduleForModel 'food-item', 'Unit | Model | food item', {
 
 test 'it exists', (assert) ->
   model = @subject()
-  # store = @store()
   assert.ok !!model
