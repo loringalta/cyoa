@@ -4,7 +4,7 @@
       = input value= numberOfResults id="search-bar" placeholder="Num" onfocus="this.placeholder=''"
       = input value= searchQuery id="search-bar-1" placeholder="Search" onfocus="this.placeholder=''" 
       button{action "search"} type="submit" class="submit-button" Submit
-    form submit='add' class='search-container'
+    form submit='add' class='search-container add'
       = input value= addQuery id='search-bar-2' placeholder="Add" onfocus="this.placeholder=''"
       button{action "add"} type="submit" class="submit-button" Add
 

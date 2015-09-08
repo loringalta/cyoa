@@ -8,5 +8,4 @@ nav
     li#home
       link-to "index" | Home
     li#search
-      / if session.isAuthenticated
       link-to "search-bar" | Search

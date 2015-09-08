@@ -13,7 +13,6 @@ SearchBarController = Ember.Controller.extend
         datatype: 'json'
         url: "/api/food_items?numberOfResults=#{numberOfResults}&searchQuery=#{add_query}").success((data) ->
           id = 0
-          console.log data
           for item in data.food_items
             do (item) ->
               id++
