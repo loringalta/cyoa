@@ -5,8 +5,9 @@ require 'pp'
 
 class FoodItem < ActiveRecord::Base
   has_many :nutrients, class_name: 'FoodNutrient', foreign_key: 'nutrient_name'
+  belongs_to :user, class_name: 'User', inverse_of: :food_items
+
   @@api = 'mLGtkAwgswBDghnwNP6nxQEsu0gXYBOGAp1WBhWn'
-  @@id = 0
   def self.get_usda_food_info(no_list, num_results)
     food_list = []
     no_list.each do |item_id, item_group|
@@ -75,8 +76,7 @@ class FoodItem < ActiveRecord::Base
     new_food.nutrient_title     = item['name']
     new_food.unit               = item['unit']
     new_food.value              = item['value']
-    new_food.id                 = item['nutrient_id'].to_i + @@id
-    @@id += 1
+    new_food.id                 = item['nutrient_id']
     food_nutrients << new_food
   end
 
