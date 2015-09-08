@@ -2,13 +2,14 @@
   .gridly
     each model as |food index|
       .brick class="large-{{index}}"
+        h1#food_name = food.name
+        a.fav click='favorite'
         a.delete-widget click='deleteWidget' x
-        / i{action 'favorite'} class='favorite'
-        table class="pure-table"
+        table class="pure-table" 
           thead
             tr
-              th = food.name
-              th in 100 grams
+              th 
+              th in 100 grams                
           each nutrient in food.nutrients
             tr
               td = nutrient.nutrient_title

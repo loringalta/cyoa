@@ -19,9 +19,6 @@ Router.map(function() {
   
   this.route('login');
   this.route('search-bar');
-
-  this.resource('editFoodItem', {path: '/search-bar/edit'})
-
 });
 
 

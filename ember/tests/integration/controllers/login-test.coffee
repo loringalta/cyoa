@@ -20,9 +20,9 @@ test 'Should fail with bad password',  ->
       equal(find("form h1").text(), "Login")
 
 
-test "Should authenticate with good password", (assert) ->
+test "Should authenticate and then route to landing page", (assert) ->
   assert.expect(1)
   visit("/login").then ->
     authenticateSession()
     andThen ->
-      assert.equal(currentRouteName(), '/search-bar')
+      assert.equal(currentRouteName(), '/')
