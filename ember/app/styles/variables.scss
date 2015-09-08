@@ -6,3 +6,16 @@ $poy: #672e45;
 $green: #719e8b;
 $peach: #f2b4a8;
 $chart1: #995667;
+$speed: "0.25s";
+
+$transition: all #{$speed} cubic-bezier(0.310, -0.105, 0.430, 1.400);
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+
+	&:focus {
+		outline: none;
+	}
+}

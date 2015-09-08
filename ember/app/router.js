@@ -18,9 +18,9 @@ Router.map(function() {
   });
   
   this.route('login');
-  this.resource('search-bar', function() {
-    this.route('food-item');
-  });
+  this.route('search-bar');
+
+  this.resource('editFoodItem', {path: '/search-bar/edit'})
 
 });
 

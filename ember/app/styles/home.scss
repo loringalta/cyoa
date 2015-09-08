@@ -13,15 +13,9 @@ body {
   src:url('raleway/raleway_thin-webfont.eot');
   font-weight: normal;
   font-style: normal;
-  background-image: url('/assets/images/cat.jpeg');
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-}
-
-@media only screen and (max-width: 767px) {
-  body {
-    //background-image: url(images/background-photo-mobile-devices.jpg);
-  }
+  // background-image: url('/assets/images/cat.jpeg');
+  // background-position: center center;
+  // background-repeat: no-repeat;
+  // background-attachment: fixed;
+  // background-size: cover;
 }

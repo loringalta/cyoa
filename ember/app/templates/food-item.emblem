@@ -1,0 +1,18 @@
+.search-board
+  .gridly
+    each model as |food index|
+      .brick class="large-{{index}}"
+        a.delete-widget click='deleteWidget' x
+        / i{action 'favorite'} class='favorite'
+        table class="pure-table"
+          thead
+            tr
+              th = food.name
+              th in 100 grams
+          each nutrient in food.nutrients
+            tr
+              td = nutrient.nutrient_title
+              td {{nutrient.value}} {{nutrient.unit}}
+          tr
+            td group
+            td = food.group

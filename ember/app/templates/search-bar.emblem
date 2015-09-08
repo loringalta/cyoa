@@ -1,22 +1,11 @@
 .container
-  form submit="search" class="search-wrapper cf"
-    = input value= numberOfResults id="numResults" placeholder="Num Results" onfocus="this.placeholder=''" type="search"
-    = input value= searchQuery id="query" placeholder="Search" onfocus="this.placeholder=''" type="search"
-    button{action "search"} type="submit" value="submit"
-      Submit
-  .search-board
-    .gridly
-      each model as |foodItem index|
-        .brick class="large-{{index}}"
-          table class="pure-table"
-            thead
-              tr
-                th = food.name
-                th in 100 grams
-            each nutrient in food.nutrients
-              tr
-                td = nutrient.nutrient_title
-                td {{nutrient.value}} {{nutrient.unit}}
-            tr
-              td group
-              td = food.group
+  .search-dashboard
+    form submit="search" class='search-container'
+      = input value= numberOfResults id="search-bar" placeholder="Num" onfocus="this.placeholder=''"
+      = input value= searchQuery id="search-bar-1" placeholder="Search" onfocus="this.placeholder=''" 
+      button{action "search"} type="submit" class="submit-button" Submit
+    form submit='add' class='search-container'
+      = input value= addQuery id='search-bar-2' placeholder="Add" onfocus="this.placeholder=''"
+      button{action "add"} type="submit" class="submit-button" Add
+
+= partial 'food-item'

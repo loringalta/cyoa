@@ -1,0 +1,3 @@
+h2 Edit Food Item
+  form submit='add' class='search-wrapper cf'
+    = input value= addQuery placeholder="Add" onfocus="this.placeholder=''"
