@@ -1,6 +1,0 @@
-#test User {{age}}
-button{action "pressed"} Press Me
-
-.search_board
-  .gridly
-    .brick.small hello

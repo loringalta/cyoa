@@ -16,9 +16,13 @@ Router.map(function() {
       path: '/user/:user_id'
     });
   });
-  
+
   this.route('login');
-  this.route('search-bar');
+  this.resource('search-bar', function(){
+    this.route('food-item');
+  });
+  this.resource('food-item', { path: '/food-item/:searchQuery' });
+
 });
 
 

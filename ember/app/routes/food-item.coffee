@@ -1,14 +1,11 @@
 `import Ember from 'ember'`
 
 FoodItemRoute = Ember.Route.extend
-  queryParams: 
-    searchQuery: 
-      refreshModel: true
-    numberOfResults:
-      refreshModel: true
-  controllerName: 'search-bar'
+  query: (params) ->
+    console.log params
   model: (params) ->
-    data = this.store.findQuery('foodItem', params)
+    data = this.store.find('foodItem', params)
+    console.log "foo-teim", data
     return data
 
 `export default FoodItemRoute`

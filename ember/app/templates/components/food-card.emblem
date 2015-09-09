@@ -1,0 +1,19 @@
+each content as |food index|
+  .card class="large-{{index}}"
+    h1 = food
+    / h1#food_name = food.name
+    / a.delete-widget click='deleteWidget' x
+    table class="pure-table"
+    /   thead
+    /     tr
+    /       th
+    /       th in 100 grams
+    /   each nutrient in food.nutrients
+    /     tr
+    /       td = nutrient.nutrient_title
+    /       td {{nutrient.value}} {{nutrient.unit}}
+    /   tr
+    /     td group
+    /     td = food.group
+
+= yield

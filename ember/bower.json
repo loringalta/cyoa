@@ -14,7 +14,9 @@
     "jquery": "^1.11.3",
     "loader.js": "ember-cli/loader.js#3.2.1",
     "qunit": "~1.18.0",
-    "rails-csrf": "0.0.5"
+    "rails-csrf": "0.0.5",
+    "ember-addons.bs_for_ember": "~0.7.0",
+    "select2": "3.5.2"
   },
   "resolutions": {
     "ember": "1.13.7"
