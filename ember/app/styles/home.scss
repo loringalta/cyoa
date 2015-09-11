@@ -4,18 +4,30 @@ html {
     -moz-osx-font-smoothing: grayscale;
     margin: 0;
     padding: 0;
+    height: 100%;
 }
 
 body {
-  margin: 0;
-  background-color: $peach;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height:100%;
   font-family: 'Raleway';
   src:url('raleway/raleway_thin-webfont.eot');
   font-weight: normal;
   font-style: normal;
-  // background-image: url('/assets/images/cat.jpeg');
-  // background-position: center center;
-  // background-repeat: no-repeat;
-  // background-attachment: fixed;
-  // background-size: cover;
+  background-image: url('/assets/images/greenbeans.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+
+  &:focus {
+    outline: none;
+  }
 }

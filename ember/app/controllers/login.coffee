@@ -1,17 +1,9 @@
-`import Ember from 'ember'`
+`import Ember from "ember";`
+`import ApplicationController from "./application";`
+`import LoginControllerMixin from "simple-auth/mixins/login-controller-mixin";`
 
-LoginController =  Ember.Controller.extend
-  actions: 
-  	logIn: -> 
-  		controller = this
-  		return Ember.$.post('/users/sign_in.json', { user:
-  				email: @get('email')
-  				password: @get('password')
-  				}, ((data) ->
-  					location.reload()
-  					return
-  				), 'json').fail ->
-  					alert 'sign in failed!'
-  					return
+LoginController = ApplicationController.extend(LoginControllerMixin, {
+  authenticator: 'authenticator:custom'
+})
 
-`export default LoginController`
+`export default LoginController;`

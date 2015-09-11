@@ -1,2 +1,7 @@
-h1 landing page
+.landing-page
+  .body-text
+    h1 Hello 
+    h1 Welcome to Food Search
+  
+
 / = dash-board

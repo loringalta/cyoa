@@ -12,27 +12,9 @@ module.exports = function(environment) {
         // e.g. 'with-controller': true
       }
     },
-    contentSecurityPolicy: {
-      'default-src': "'none'",
-      'script-src':  "'self' 'unsafe-inline' 'unsafe-eval' use.typekit.net connect.facebook.net maps.googleapis.com maps.gstatic.com",
-      'font-src':    "'self' data: use.typekit.net",
-      'connect-src': "'self'",
-      'img-src':     "'self' www.facebook.com p.typekit.net",
-      'style-src':   "'self' 'unsafe-inline' use.typekit.net",
-      'frame-src':   "s-static.ak.facebook.com static.ak.facebook.com www.facebook.com"
-    },
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    },
-    "simple-auth": {
-      authorizer: 'simple-auth-authenticator:devise'
-    },
-    "simple-auth-devise": {
-      resourceName: 'account'
-    },
-    railsCsrf: {
-      csrfURL: 'api/csrf'
     }
   };
 
@@ -54,7 +36,6 @@ module.exports = function(environment) {
     ENV.locationType = 'none';
     ENV.APP.LOG_VIEW_LOOKUPS      = false;
     ENV.APP.rootElement = '#ember-testing';
-    ENV['simple-auth'].store = 'simple-auth-session-store:ephemeral';
 
   }
 
@@ -63,13 +44,29 @@ module.exports = function(environment) {
   }
 
   ENV['simple-auth'] = {
-    crossOriginWhitelist: ['http://localhost:3000'],
+    authenticator: 'authenticator:custom',
     authorizer: 'simple-auth-authorizer:devise',
+    session: 'session:custom',
+    crossOriginWhitelist: ['localhost:3000']
   };
 
   ENV['simple-auth-devise'] = {
+    serverTokenEndpoint: 'http://localhost:3000/users/sign_in',
     tokenAttributeName: 'token',
     identificationAttributeName: 'email'
+  };
+
+  ENV['contentSecurityPolicyHeader'] = 'Content-Security-Policy';
+
+  ENV['contentSecurityPolicy'] = {
+    'default-src': "'none'",
+    'script-src': "'self'",
+    'font-src': "'self' data: http://fonts.gstatic.com http://fonts.googleapis.com",
+    'connect-src': "'self' http://localhost:3000",
+    'img-src': "'self'",
+    'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com",
+    'media-src': "'self'",
+    'report-uri': '/api/csp-report'
   };
 
   return ENV;

@@ -15,7 +15,6 @@ test 'Should fail with bad password',  ->
     fillIn("input#password","meow")
     fillIn("input#identification", "meowmeow")
     click("form button")
-
     andThen ->
       equal(find("form h1").text(), "Login")
 
@@ -25,4 +24,4 @@ test "Should authenticate and then route to landing page", (assert) ->
   visit("/login").then ->
     authenticateSession()
     andThen ->
-      assert.equal(currentRouteName(), '/')
+      assert.equal currentRouteName(), '/'

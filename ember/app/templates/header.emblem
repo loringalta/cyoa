@@ -2,10 +2,11 @@ nav
   ul
     li#login
       if session.isAuthenticated
-        a{ action 'invalidateSession' } Logout
-        h1 = session.account.name
+        / a{ action 'invalidateSession' } Logout
+        h1 = session.user.id
+        log session
       else
-        a{ action 'logIn' } href='/login' Login
+        link-to "login" | Login
     li#home
       link-to "index" | Home
     li#search
