@@ -11,7 +11,7 @@ SearchBarController = Ember.Controller.extend
       return
     search: (food_item_name) ->
       $('.gridly').gridly(
-        base: 280
+        base: 290
         gutter: 10
         'responsive': true
       )

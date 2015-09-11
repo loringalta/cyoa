@@ -1,19 +1,17 @@
 .landing-page {
-
-	margin: auto;
-	padding: 0;
-	width: 80%;
-	text-align: left;
-	.body-text{
-		position: relative;
-		left: 50%;
-			-webkit-transform: translate(-50%, -50%);
-			-ms-transform: translate(-50%, -50%);
-			transform: translate(-50%, -50%);
-		h1 {
-			
-			font-size: 4em;
-			font-family: 'Raleway';
-		}
-	}
+  width: 80%;
+  .body-text {
+    h1 {
+			color: $poy;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 10em;
+      height: 4em;
+      margin-top: -2em;
+      margin-left: -5em;
+      font-size: 4em;
+      font-family: 'Raleway';
+    }
+  }
 }

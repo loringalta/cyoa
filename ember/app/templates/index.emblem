@@ -1,7 +1,7 @@
 .landing-page
-  .body-text
-    h1 Hello 
-    h1 Welcome to Food Search
-  
+  .body-text.blurred-bg
+    h1 Welcome
+
+
 
 / = dash-board

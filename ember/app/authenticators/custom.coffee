@@ -10,7 +10,7 @@ CustomAuthenticator = Devise.extend
       @makeRequest(data).then ((response) =>
         Ember.run =>
           store = @container.lookup('store:main')
-          account = { 'account' : 
+          account = { 'account' :
             {
               id: response.account.id
               email: response.account.email
@@ -18,7 +18,8 @@ CustomAuthenticator = Devise.extend
             }
 
           }
-          store.getById('account', response.account.id) || store.createRecord('user', response.account)
+          console.log account
+          store.getById('account', response.account.id) || store.createRecord('account', response.account)
           resolve
             id:        response.account.id
             email:     response.account.email

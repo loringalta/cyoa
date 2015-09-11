@@ -2,7 +2,7 @@ nav
   ul
     li#login
       if session.isAuthenticated
-        / a{ action 'invalidateSession' } Logout
+        a{ action 'invalidateSession' } Logout
         h1 = session.user.id
         log session
       else
