@@ -6,5 +6,5 @@ Nutrient = DS.Model.extend
   unit: DS.attr('string')
   value: DS.attr('number')
   nutrient_title: DS.attr('string')
-  
+
 `export default Nutrient`

@@ -9,15 +9,18 @@ SearchBarController = Ember.Controller.extend
     deselectItem: (item) ->
       this.get('selected').removeObject(item)
       return
-    search: (food_item) ->
-      data = this.store.find('foodItem', food_item)
+    search: (food_item_name) ->
+      $('.gridly').gridly(
+        base: 280
+        gutter: 10
+        'responsive': true
+      )
+      self = this
+      self.store.find('foodItem', {'searchQuery' : food_item_name}).then ((data) ->
+        return data
+        )
       return
-      # this.transitionToRoute('food-item', { query: food_item })
-        # $('.gridly').gridly(
-        #   base: 280
-        #   gutter: 10
-        #   'responsive': true
-        # )
+
 
   # queryParams: ['numberOfResults', 'searchQuery']
   # numberOfResults: null

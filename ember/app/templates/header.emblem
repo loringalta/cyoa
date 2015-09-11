@@ -3,8 +3,9 @@ nav
     li#login
       if session.isAuthenticated
         a{ action 'invalidateSession' } Logout
+        h1 = session.account.name
       else
-        link-to "login" | Login
+        a{ action 'logIn' } href='/login' Login
     li#home
       link-to "index" | Home
     li#search

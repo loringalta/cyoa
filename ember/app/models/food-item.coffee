@@ -1,10 +1,10 @@
 `import DS from 'ember-data'`
 
 FoodItem = DS.Model.extend
-  user: DS.belongsTo('User')
+  account: DS.belongsTo('account')
   name: DS.attr('string')
   group: DS.attr('string')
   foodid: DS.attr('number')
-  nutrients: DS.hasMany('nutrients'),  async:true
+  nutrients: DS.hasMany('nutrient')
 
 `export default FoodItem`

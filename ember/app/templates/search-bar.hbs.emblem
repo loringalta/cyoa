@@ -1,4 +1,0 @@
-= main-search content=model selected=selected placeholder="Search" action="search"
-.gridly
-  = food-card content=model
-= outlet

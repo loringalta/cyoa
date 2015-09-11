@@ -5,6 +5,7 @@ MainSearchComponent = Ember.Component.extend
   classNames: ['form-control']
   classNameBindings: ['inputSize']
   inputSize: 'input-md'
+  type: 'hidden'
   placeholder: null
   multiple: true
 
@@ -14,6 +15,7 @@ MainSearchComponent = Ember.Component.extend
     options.multiple = self.get('multiple')
     options.placeholder = self.get('placeholder')
     options.tokenSeparators = [ ',' ]
+    options.tags = ["red", "blue"]
 
     options.formatSelection = (item) ->
       self.formatItemForSelect2 item
@@ -24,36 +26,40 @@ MainSearchComponent = Ember.Component.extend
     options.createSearchChoice = (term) ->
       foundItem = null
       self.get('content').forEach (item) ->
-        if item.get('id') == term
+        if item.get('name') == term
           foundItem = true
         return
       if !foundItem
+        console.log term
         foundItem = Ember.Object.create(
           id: term
+          name: term
+          text: term
           'isNew': true)
+      console.log foundItem
       return foundItem
 
     options.formatSelectionCssClass = (data) ->
-      console.log "main-search", data
       cssClass = 'select2-search-choice-old'
       if data != undefined and data.get != undefined and data.get('isNew')
         cssClass = 'select2-search-choice-new'
       cssClass
 
-    options.query = (query) ->
+    options.query = (options) ->
       select2 = this
       filteredContent = self.get('content').reduce(((results, item) ->
-        if select2.matcher(query.term, Ember.get(item, 'id'))
+        console.log "what", Ember.get(item, 'name')
+        if select2.matcher(options.term, Ember.get(item, 'name'))
           results.push item
         results
       ), [])
-      query.callback results: filteredContent
+      options.callback results: filteredContent
       return
 
     self._select = self.$().select2(options)
     self._select.on 'select2-selecting', (e) ->
       self.get('selected').pushObject e.choice
-      food_item = self.get('selected').get('lastObject').id
+      food_item = self.get('selected').get('lastObject').get('name')
       self.searchForItem(food_item)
       return
 
@@ -64,12 +70,13 @@ MainSearchComponent = Ember.Component.extend
   searchForItem: (item) ->
     if (!item)
       return
+    console.log "item", item
     return @sendAction('action', item)
 
   formatItemForSelect2: (item) ->
     if (!item)
       return
-    text = Ember.get(item, "id")
+    text = Ember.get(item, "name")
     return Ember.Handlebars.Utils.escapeExpression(text)
   #
   # selectedObserver: ->
