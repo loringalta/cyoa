@@ -30,7 +30,6 @@ MainSearchComponent = Ember.Component.extend
           foundItem = true
         return
       if !foundItem
-        console.log term
         foundItem = Ember.Object.create(
           id: term
           name: term
@@ -48,7 +47,6 @@ MainSearchComponent = Ember.Component.extend
     options.query = (options) ->
       select2 = this
       filteredContent = self.get('content').reduce(((results, item) ->
-        console.log "what", Ember.get(item, 'name')
         if select2.matcher(options.term, Ember.get(item, 'name'))
           results.push item
         results

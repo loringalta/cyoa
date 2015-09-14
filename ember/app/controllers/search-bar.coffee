@@ -7,9 +7,10 @@ SearchBarController = Ember.Controller.extend
       self = this
       food = this.store.filter 'foodItem', (item) ->
         if item.get('name') == food_item
+          console.log "food_item", food_item
           user = self.get('session').get('user')
           user.get('food_item').pushObject(item)
-          console.log "user", item
+          console.log "user", user.get('food_item')
           return user
           return
     selectItem: (item) ->
