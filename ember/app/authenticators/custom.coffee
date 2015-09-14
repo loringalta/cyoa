@@ -10,20 +10,11 @@ CustomAuthenticator = Devise.extend
       @makeRequest(data).then ((response) =>
         Ember.run =>
           store = @container.lookup('store:main')
-          account = { 'account' :
-            {
-              id: response.account.id
-              email: response.account.email
-              username: response.account.username
-            }
-
-          }
-          console.log account
-          store.getById('account', response.account.id) || store.createRecord('account', response.account)
+          store.getById('user', response.user.id) || store.createRecord('user', response.user)
           resolve
-            id:        response.account.id
-            email:     response.account.email
-            token:     response.account.token
+            id:        response.user.id
+            email:     response.user.username
+            token:     response.user.token
       ), (xhr, status, error) ->
         Ember.run ->
           reject xhr.responseJSON || xhr.responseText

@@ -3,10 +3,14 @@ nav
     li#login
       if session.isAuthenticated
         a{ action 'invalidateSession' } Logout
-        h1 = session.user.id
-        log session
       else
         link-to "login" | Login
+    li#username
+      if session.isAuthenticated
+        link-to session.user.id
+        log session.user
+      else
+        h1 N/A
     li#home
       link-to "index" | Home
     li#search

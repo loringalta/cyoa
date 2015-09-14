@@ -2,6 +2,10 @@
 
 FoodCardComponent = Ember.Component.extend
   actions:
+    favorite: ->
+      self = this
+      food_name = self.$('h1#food_name').get(0).innerHTML
+      return this.sendAction('action', food_name)
     deleteWidget: ->
       self = this
       $(".card .delete-widget").on 'click', (e) ->

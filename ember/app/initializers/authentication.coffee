@@ -1,7 +1,6 @@
-`import CustomSession from '../models/custom-session';`
-`import CustomAuthenticator from '../authenticators/custom';`
-
-
+`import CustomSession from '../models/custom-session'`
+`import CustomAuthenticator from '../authenticators/custom'`
+`import ApplicationRouteMixin from 'simple-auth/mixins/application-route-mixin'`
 AuthenticationInitializer = {
   name: 'authentication',
   before: 'simple-auth',

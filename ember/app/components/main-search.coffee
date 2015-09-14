@@ -70,7 +70,6 @@ MainSearchComponent = Ember.Component.extend
   searchForItem: (item) ->
     if (!item)
       return
-    console.log "item", item
     return @sendAction('action', item)
 
   formatItemForSelect2: (item) ->

@@ -46,74 +46,16 @@
     transition: 0.35s ease;
     color: #008ABF;
     &::-webkit-input-placeholder{
-      transition: opacity 0.45s ease; 
+      transition: opacity 0.45s ease;
       opacity: 0;
     }
     &::-moz-placeholder {
-      transition: opacity 0.45s ease; 
+      transition: opacity 0.45s ease;
       opacity: 0;
     }
     &:-ms-placeholder {
-     transition: opacity 0.45s ease; 
+     transition: opacity 0.45s ease;
      opacity: 0;
-   }    
+   }
  }
 }
-
-#search-bar-1{
-  display: inline-block;
-  margin: 0 auto;
-  width: 25%;
-  height: 30px;
-  border: none;
-  padding: 0 20px;
-  font-size: 0.8rem;
-  outline: none;
-  &:focus{
-    transition: 0.35s ease;
-    color: #008ABF;
-    &::-webkit-input-placeholder{
-      transition: opacity 0.45s ease; 
-      opacity: 0;
-    }
-    &::-moz-placeholder {
-      transition: opacity 0.45s ease; 
-      opacity: 0;
-    }
-    &:-ms-placeholder {
-     transition: opacity 0.45s ease; 
-     opacity: 0;
-   }    
- }
-}
-
-#search-bar-2{
-  display: inline-block;
-  margin: 0 auto;
-  width: 25%;
-  height: 30px;
-  padding: 0 20px;
-  border: none;
-  font-size: 0.8rem;
-  outline: none;
-  &:focus{
-    transition: 0.35s ease;
-    color: #008ABF;
-    &::-webkit-input-placeholder{
-      transition: opacity 0.45s ease; 
-      opacity: 0;
-    }
-    &::-moz-placeholder {
-      transition: opacity 0.45s ease; 
-      opacity: 0;
-    }
-    &:-ms-placeholder {
-     transition: opacity 0.45s ease; 
-     opacity: 0;
-   }    
- }
-}
-
-
-
-

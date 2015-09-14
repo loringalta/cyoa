@@ -2,9 +2,8 @@
 
 CustomSession = Session.extend
   user: (->
-    console.log this
-    userId = @get("account")
-    @container.lookup("store:main").find("account", userId) unless Ember.isEmpty(userId)
+    userId = this.get('content').secure.id
+    @container.lookup("store:main").find("user", userId) unless Ember.isEmpty(userId)
   ).property("id")
 
 `export default CustomSession`

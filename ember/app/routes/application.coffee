@@ -5,9 +5,9 @@
 ApplicationRoute = Ember.Route.extend ApplicationRouteMixin,
   beforeModel: (transition) ->
   	this._super.apply this, arguments
-  	return this.csrf.fetchToken()
- 	model: -> 
- 		food = { 'food-items' : 
+  	return this.csrf.fetchToken()    
+ 	model: ->
+ 		food = { 'food-items' :
  			{
  				id: 9064
  				num_result: 2
@@ -26,6 +26,6 @@ ApplicationRoute = Ember.Route.extend ApplicationRouteMixin,
   #   else
   #     @transitionTo 'login'
   #     console.log @session.get('store')
-   
-  
+
+
 `export default ApplicationRoute`
