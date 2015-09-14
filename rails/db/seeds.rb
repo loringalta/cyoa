@@ -7,7 +7,7 @@ n1 = FoodNutrient.create(
   value: 2
   )
 
-FoodItem.create(
+f1 = FoodItem.create(
   search_query: 'apple',
   name: 'apple',
   group: 'fruit',
@@ -27,8 +27,16 @@ FoodItem.create(
 
 
 User.create([
-  { email: 'green@mail.com',
-    password: '12345678', password_confirmation: '12345678' },
-  { email: 'pink@mail.com',
-    password: '12345678', password_confirmation: '12345678' }
+  { username: 'green',
+    email: '1@mail.com',
+    password: '1',
+    password_confirmation: '1',
+    food_items: [f1]
+  },
+  { username: 'pink',
+    email: 'pink@mail.com',
+    password: '12345678',
+    password_confirmation: '12345678',
+    food_items: [f1]
+  }
   ])

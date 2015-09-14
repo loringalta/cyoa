@@ -2,9 +2,10 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   before_save :ensure_authentication_token
-
+  has_many :food_items, class_name: 'FoodItem', foreign_key: 'foodid'
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
 
   def ensure_authentication_token
     if authentication_token.blank?

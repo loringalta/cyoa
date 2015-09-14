@@ -2,26 +2,34 @@ require 'json'
 
 class Api::FoodItemsController < ApplicationController
   respond_to :json
-  before_action :set_food_item, only: [:show, :update, :destroy]
 
   def index
-    if params[:searchQuery].nil? || params[:numberOfResults].nil? || params[:searchQuery].empty?
-      render json: @food_item
+    if params[:searchQuery].nil?
+      render json: FoodItem.all
     else
       @@search_query = params[:searchQuery].gsub(' ', '%20')
-      @@num_results = params[:numberOfResults]
+      # @@num_results = params[:numberOfResults]
+      @@num_results = 5
       find_foods
       render json: @search_body_hash
     end
   end
 
   def show
-    render json: @food_item
+    if params[:searchQuery].nil?
+      render json: FoodItem.all
+    else
+      @@search_query = params[:searchQuery].gsub(' ', '%20')
+      # @@num_results = params[:numberOfResults]
+      @@num_results = 2
+      find_foods
+      render json: @search_body_hash
+    end
   end
 
   def update
     find_foods
-    @food_item = FoodItem.find(params[:id])
+    @food_item = FoodItem.find(params[:searchQuery])
 
     if @food_item.update(food_item_params)
       head :no_content
@@ -49,32 +57,21 @@ class Api::FoodItemsController < ApplicationController
   def find_foods
     if FoodItem.where(name: @@search_query).where(num_result: @@num_results).blank?
       @search_body_hash = FoodItem.json_parse_result(@@search_query, @@num_results)
-      check_error_status
+      # check_error_status
     else
       @search_body_hash = FoodItem.where(search_query: @@search_query).where(num_result: @@num_results)
     end
   end
 
-  def create_find_food
-    @search_body_hash.each do |h|
-      @food = FoodItem.new
-      @food.search_query = @@search_query
-      @food.num_result = @@num_results
-      @food.name = h.name
-      @food.group = h.group
-      @food.nutrients = h.nutrients
-      @food.foodid = h.id
-      @food.save!
-    end
-  end
 
-  def check_error_status
-    if @search_body_hash[0]['status']
-      @search_body_hash = @search_body_hash[0]
-    else
-      # create_find_food
-    end
-  end
+  # def check_error_status
+  #   pp @search_body_hash
+  #   if @search_body_hash[0]['status']
+  #     @search_body_hash = @search_body_hash[0]
+  #   else
+  #     # create_find_food
+  #   end
+  # end
 
   def isQuery?
     @@search_query.nil? || @@search_query.empty?
@@ -92,12 +89,4 @@ class Api::FoodItemsController < ApplicationController
       render(json: { error: search.errors })
     end
   end
-
-    def set_food_item
-      @food_item = FoodItem.find(params[:id])
-    end
-
-    def food_item_params
-      params.require(:food_item).permit(:name, :group, :nutrients, :foodid)
-    end
 end

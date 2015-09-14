@@ -9,6 +9,14 @@ Rails.application.configure do
   # Do not eager load code on boot.
   config.eager_load = false
 
+
+  config.middleware.insert_before 0, 'Rack::Cors' do
+  allow do
+    origins '*'
+    resource '*', :headers => :any, :methods => [:get, :post, :options]
+  end
+end
+
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
