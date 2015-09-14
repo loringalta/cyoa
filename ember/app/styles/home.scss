@@ -11,17 +11,18 @@ body {
   overflow-y: scroll;
   overflow-x: hidden;
   height:100%;
-  font-family: 'Raleway';
-  src:url('raleway/raleway_thin-webfont.eot');
   font-weight: normal;
   font-style: normal;
-  background-image: url('/assets/images/greenbeans.jpg');
-  background-position: center center;
+  font-family: 'Raleway';
+  background-image: linear-gradient(
+    rgba(0,0,0,0.5),
+    rgba(0,0,0,0.5)
+    ),
+    url('/assets/images/greenbeans.jpg');  background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
 }
-
 
 * {
   margin: 0;

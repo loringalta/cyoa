@@ -6,10 +6,14 @@
 
 @for $i from 0 through 40 {
   .card {
-
+    table {
+      padding: 20px;
+    }
     h1 {
-      font-size: 1.7em;
-      margin-right: 30px;
+      padding: 20px;
+      font-size: 1.6em;
+      text-align: left;
+      background: #fff;
       z-index: 800;
     }
 
@@ -42,10 +46,6 @@
         height: 40px;
         display: inline-block;
         overflow: hidden;
-        background: {
-          image: url("http://cssanimation.rocks/assets/images/posts/steps/twitter_fave.png");
-          repeat: no-repeat;
-        }
       }
     }
   }
