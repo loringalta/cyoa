@@ -7,6 +7,8 @@ module.exports = function(defaults) {
       useScss: true
     }
   });
-
+  app.import('bower_components/gridly/javascripts/jquery.gridly.js');
+  app.import('bower_components/gridly/stylesheets/jquery.gridly.css');
+  
   return app.toTree();
 };

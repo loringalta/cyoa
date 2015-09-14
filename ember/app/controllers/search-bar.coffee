@@ -9,6 +9,7 @@ SearchBarController = Ember.Controller.extend
         if item.get('name') == food_item
           user = self.get('session').get('user')
           user.get('food_item').pushObject(item)
+          console.log "user", item
           return user
           return
     selectItem: (item) ->
@@ -19,6 +20,11 @@ SearchBarController = Ember.Controller.extend
       return
     search: (food_item_name) ->
       self = this
+      $('.gridly').gridly(
+        base: 290
+        gutter: 10
+        'responsive': true
+      )
       self.store.find('foodItem', {'searchQuery' : food_item_name}).then ((data) ->
         return data
         )
