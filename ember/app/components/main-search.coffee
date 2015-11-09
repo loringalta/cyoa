@@ -75,11 +75,5 @@ MainSearchComponent = Ember.Component.extend
       return
     text = Ember.get(item, "name")
     return Ember.Handlebars.Utils.escapeExpression(text)
-  #
-  # selectedObserver: ->
-  #   self = this
-  #   Ember.run.later (->
-  #       self._select.select2('data', self.get('selected'))
-  #     ).observes('selected.length')
-
+    
 `export default MainSearchComponent`

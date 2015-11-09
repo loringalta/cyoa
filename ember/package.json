@@ -36,6 +36,7 @@
     "ember-cli-release": "0.2.3",
     "ember-cli-sass": "4.2.0",
     "ember-cli-simple-auth": "0.8.0",
+    "ember-cli-simple-auth-cookie-store": "0.8.0",
     "ember-cli-simple-auth-devise": "0.8.0",
     "ember-cli-simple-auth-oauth2": "0.8.0",
     "ember-cli-simple-auth-testing": "^0.8.0",

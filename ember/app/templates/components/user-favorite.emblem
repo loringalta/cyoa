@@ -1,7 +1,0 @@
-.card
-  .card-favorites
-    .card-actions
-    .card-content
-      h3 Sup
-
-= yield

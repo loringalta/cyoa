@@ -1,3 +1,15 @@
+.container {
+	position: relative;
+}
+
+.search-dashboard {
+	display: block;
+	margin: auto;
+	padding-top: 20px;
+	width: 100%;
+	text-align: center;
+}
+
 .gridly {
   position: relative;
   margin: auto;
@@ -9,9 +21,9 @@
     table {
       padding: 20px;
     }
-    h1 {
-      padding: 20px;
-      font-size: 1.6em;
+    h1#food_name {
+      padding: 10px;
+      font-size: 1.5em;
       text-align: left;
       background: #fff;
       z-index: 800;

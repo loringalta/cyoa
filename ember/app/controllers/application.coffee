@@ -8,6 +8,9 @@ ApplicationController = Ember.Controller.extend
     window.Store = @store
     @_super();
   actions:
+    click: ->
+      $('ul').toggleClass('menu-open')
+      $('ul').toggleClass('menu-link')
     selectItem: (item) ->
       this.get('selected').pushObject(item)
     deselectItem: (item) ->

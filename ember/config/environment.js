@@ -1,5 +1,4 @@
 /* jshint node: true */
-
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'food-search',
@@ -47,7 +46,12 @@ module.exports = function(environment) {
     authenticator: 'authenticator:custom',
     authorizer: 'simple-auth-authorizer:devise',
     session: 'session:custom',
-    crossOriginWhitelist: ['localhost:3000']
+    crossOriginWhitelist: ['localhost:3000'],
+    store: 'simple-auth-session-store:cookie'
+  };
+
+  ENV['simple-auth-cookie-store'] = {
+    cookieExpirationTime: 60
   };
 
   ENV['simple-auth-devise'] = {
@@ -60,7 +64,7 @@ module.exports = function(environment) {
 
   ENV['contentSecurityPolicy'] = {
     'default-src': "'none'",
-    'script-src': "'self'",
+    'script-src': "'self' *",
     'font-src': "'self' data: http://fonts.gstatic.com http://fonts.googleapis.com",
     'connect-src': "'self' http://localhost:3000",
     'img-src': "'self'",

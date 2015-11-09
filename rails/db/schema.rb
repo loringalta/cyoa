@@ -31,8 +31,8 @@ ActiveRecord::Schema.define(version: 20150910152926) do
 
   create_table "food_nutrients", force: :cascade do |t|
     t.integer  "value"
-    t.string   "nutrient_name"
     t.string   "nutrient_title"
+    t.string   "nutrient_name"
     t.string   "unit"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false

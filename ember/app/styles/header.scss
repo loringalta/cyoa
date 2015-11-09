@@ -1,29 +1,117 @@
+$bun: #f39c12;
+$cheese: #f1c40f;
+$patty: #6f5023;
+
 nav {
-  width: 100%;
-  z-index: 800;
-  text-align: center;
-  background: $page;
+  padding-top: 40px;
+  z-index: -1;
+  margin: 0;
+  float: left;
+  padding-left: 30px;
+  padding-right: 20px;
+}
 
-  ul {
-    position: relative;
-    margin: 0;
-    z-index: 2;
-    text-transform: uppercase;
-    text-align: center;
+.cheeseburger {
+  width: 46px;
+  height: 46px;
+  position: relative;
+  display: inline-block;
+  border-radius: 8px;
+}
+.cheese, .bun, .beef-patty {
+  display: block;
+  position: absolute;
+  left: 5px;
+}
+.bun {
+  background-color: $bun;
+  height: 8px;
+  opacity: 1;
+  transition: opacity 200ms ease;
+  width: 36px;
+  &.top {
+    top: 5px;
+    border-radius: 4px 4px 0px 0px;
+  }
+  &.bottom {
+    bottom: 6px;
+    border-radius: 0px 0px 4px 4px;
+  }
+}
+.cheese, .beef-patty {
+  height: 5px;
+  width: 36px;
+  transition: all 200ms ease;
+}
+.cheese {
+  background-color: $cheese;
+  top: 18px;
+}
+.beef-patty {
+  background-color: $patty;
+  top: 22px;
+}
 
+ul.menu-open {
+  .bun.top, .bun.bottom {
+    opacity: 0;
+    transition: opacity 200ms ease;
+  }
+  .cheese, .beef-patty {
+    height: 6px;
+    background-color: $patty;
+    top: 20px;
+    transition: all 200ms ease;
+    border-radius: 4px;
+  }
+  .cheese {
+    transform: rotate(45deg);
+    transform-origin: center;
+  }
+  .beef-patty {
+    transform: rotate(-45deg);
+    transform-origin: center;
+  }
+}
+
+li {
+  opacity: 0;
+}
+
+ul {
+  z-index: 1000;
+  list-style-type: none;
+}
+
+.menu-link-open {
+  padding-top: 40px;
+}
+
+ul.menu-link {
+  .menu-link-open {
+    padding-top: 40px;
     li {
-      display: inline-block;
-      padding: 0.5em 0;
-      margin-right: 2em;
-      margin-left: 2em;
-
+      opacity: 1;
+      transition: opacity 200ms ease;
       a {
-        letter-spacing: 2px;
         text-decoration: none;
-        color: white;
+        font: 'raleway';
+        letter-spacing: 2px;
+        color: black;
         font-size: 1em;
         font-weight: bold;
       }
     }
   }
+}
+
+.select2-container {
+    margin: 0;
+    position: relative;
+    display: inline-block;
+    /* inline-block for ie7 */
+    zoom: 1;
+    width: 80%;
+    padding-top: 45px;
+    vertical-align: middle;
 }

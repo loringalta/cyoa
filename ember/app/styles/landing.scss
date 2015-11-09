@@ -1,18 +1,60 @@
 .landing-page {
-  font-family: 'Khula', sans-serif;
+  transform: translateX(-50%);
+  position: absolute;
+  text-align: center;
+  z-index: 100;
+  width: 100%;
+  padding: 0 24px;
+  left: 50%;
+  top: 50%;
+  margin-top: -45px;
+  font-family: 'raleway';
   text-align: center;
   .body-text {
     h1 {
-      text-transform: uppercase; 
+      text-shadow: 0 0 12px rgba(0,0,0,.6);
+      margin-bottom: 6px;
+      animation: restaurant-name-display 1s ease-in-out;
+      -webkit-animation: restaurant-name-display 1s ease-in-out;
+      font-size:100px;
+      line-height: 100px;
 			color: white;
-      position: relative;
-      top: 50%;
-      left: 50%;
-      width: 8em;
-      height: 2em;
-      margin-top: 1em;
-      margin-left: -4em;
-      font-size: 4em;
+      font-family: 'Source Sans Pro', sans-serif;
+      font-weight: 300;
     }
+
+    h2 {
+      text-shadow: 0 0 6px rgba(0,0,0,.6);
+      -ms-animation: restaurant-info-display 1s ease-in-out;
+      -webkit-animation: restaurant-info-display 1s ease-in-out;
+      animation: restaurant-info-display 1s ease-in-out;
+      font-size: 20px;
+      font-family: arial;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      line-height: 20px;
+      color: white;
+    }
+  }
+
+  .btn-text {
+    background: #FFF;
+    color: #191919;
+    border: 1px solid #CCC;
+    display: inline-block;
+    border-color: #FFF!important;
+    color: #191919!important;
+    background: #FFF!important;
+    height: 54px;
+    line-height: 54px;
+    overflow: hidden;
+    cursor: pointer;
+    padding: 0 24px;
+    text-align: center;
+    font-size: 12px;
+    outline: 0;
+    margin: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
   }
 }

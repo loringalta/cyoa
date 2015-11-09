@@ -1,17 +1,20 @@
 nav
   ul
-    li#login
-      if session.isAuthenticated
-        a{ action 'invalidateSession' } Logout
-      else
-        link-to "login" | Login
-    li#username
-      if session.isAuthenticated
-        link-to session.user.id
-        log session.user
-      else
-        h1 N/A
-    li#home
-      link-to "index" | Home
-    li#search
-      link-to "search-bar" | Search
+    a{ action 'click' } class='cheeseburger'
+      span.bun.top
+      span.cheese
+      span.beef-patty
+      span.bun.bottom
+      .menu-link-open
+        li#login
+          if session.isAuthenticated
+            a{ action 'invalidateSession' } Logout
+          else
+            link-to 'login' | Login
+        li#home
+          link-to 'index' | Home
+        li#search
+          link-to 'search-bar' | Search
+        if session.isAuthenticated
+          li#username
+            link-to 'profile' session.user.id | {{session.user.username}}

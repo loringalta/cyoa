@@ -1,5 +1,5 @@
 `import Ember from 'ember'`
 
-Login = Ember.Route.extend()
+LoginRoute = Ember.Route.extend()
 
-`export default Login`
+`export default LoginRoute`

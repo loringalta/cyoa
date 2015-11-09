@@ -4,4 +4,8 @@ form submit='authenticate' class='main-form'
   .main-form.body
     = input value=identification id="identification" class='main-form body input' placeholder='Username'
     = input value=password id="password" placeholder="Enter Password" class='main-form body input' placeholder="Password"
+  .checkbox
+    label
+      = input checked=rememberMe type='checkbox'
+
   button.btn type='submit' Login

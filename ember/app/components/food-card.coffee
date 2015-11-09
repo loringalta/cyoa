@@ -3,30 +3,19 @@
 FoodCardComponent = Ember.Component.extend
   actions:
     favorite: (food_name) ->
-      this.sendAction('action', food_name)
+      this.sendAction('favorite', food_name)
       return food_name
-    deleteWidget: ->
-      self = this
+    deleteWidget: (food_name)->
       $(".card .delete-widget").on 'click', (e) ->
         $(this).closest('.card').remove()
-        parent = $(this).parent('.card')
-        text = parent.find('h1').text()
-        content = self.get('content')
-        self.removeFromContent text, content
         e.preventDefault()
         return
+      this.sendAction('delete', food_name)
       return
-  removeFromContent: (text, content) ->
-    self = this
-    for item in content
-      do (item) ->
-        console.log "before", content
-        if item.get('name') == text
-          content.removeObject(item)
-          console.log "after", content
-          return
-      return
-    return content
+    removeFromContent: (text) ->
+      self = this
+
+
 
 
 `export default FoodCardComponent`
