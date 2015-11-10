@@ -7,24 +7,24 @@
   padding: 0 24px;
   left: 50%;
   top: 50%;
-  margin-top: -45px;
+  margin-top: -72px;
   font-family: 'raleway';
   text-align: center;
   .body-text {
     h1 {
-      text-shadow: 0 0 12px rgba(0,0,0,.6);
-      margin-bottom: 6px;
+      //text-shadow: 0 0 12px rgba(0,0,0,.6);
+      //margin-bottom: 6px;
       animation: restaurant-name-display 1s ease-in-out;
       -webkit-animation: restaurant-name-display 1s ease-in-out;
-      font-size:100px;
-      line-height: 100px;
+      font-size: 100px;
+      line-height: 125px;
 			color: white;
-      font-family: 'Source Sans Pro', sans-serif;
+      //font-family: 'Source Sans Pro', sans-serif;
       font-weight: 300;
     }
 
     h2 {
-      text-shadow: 0 0 6px rgba(0,0,0,.6);
+      //text-shadow: 0 0 6px rgba(0,0,0,.6);
       -ms-animation: restaurant-info-display 1s ease-in-out;
       -webkit-animation: restaurant-info-display 1s ease-in-out;
       animation: restaurant-info-display 1s ease-in-out;

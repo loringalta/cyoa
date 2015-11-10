@@ -4,7 +4,6 @@ $patty: #6f5023;
 
 nav {
   padding-top: 40px;
-  z-index: -1;
   margin: 0;
   float: left;
   padding-left: 30px;
@@ -12,6 +11,7 @@ nav {
 }
 
 .cheeseburger {
+  cursor: pointer;
   width: 46px;
   height: 46px;
   position: relative;
@@ -74,32 +74,31 @@ ul.menu-open {
   }
 }
 
-li {
-  opacity: 0;
-}
-
 ul {
-  z-index: 1000;
   list-style-type: none;
 }
 
 .menu-link-open {
   padding-top: 40px;
+  opacity: 0;
 }
 
 ul.menu-link {
   .menu-link-open {
-    padding-top: 40px;
+    opacity: 1;
+    transition: opacity 200ms ease;
+    //padding-top: 40px;
     li {
-      opacity: 1;
-      transition: opacity 200ms ease;
       a {
+        position: relative;
         text-decoration: none;
         font: 'raleway';
         letter-spacing: 2px;
+        z-index: 1000;
         color: black;
         font-size: 1em;
         font-weight: bold;
+        cursor: pointer;
       }
     }
   }

@@ -2,7 +2,6 @@
   .body-text
     h1 Food Search
     h2 I'm healthier than I have ever bean
-  button.btn-text Search
 
 
 / = dash-board
